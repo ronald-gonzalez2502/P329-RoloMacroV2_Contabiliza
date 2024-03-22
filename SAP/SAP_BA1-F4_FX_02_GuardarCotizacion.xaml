@@ -1,0 +1,292 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SAP_BA1_F4_FX_02_GuardarCotizacion" this:SAP_BA1_F4_FX_02_GuardarCotizacion.in_str_Contizacion="Cotización indirecta" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_str_Contizacion" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_MonedaDe" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_MonedaA" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_Fecha" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_ValorTC" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:SAP_BA1_F4_FX_02_GuardarCotizacion.in_str_MonedaDe>
+    <InArgument x:TypeArguments="x:String" />
+  </this:SAP_BA1_F4_FX_02_GuardarCotizacion.in_str_MonedaDe>
+  <this:SAP_BA1_F4_FX_02_GuardarCotizacion.in_str_MonedaA>
+    <InArgument x:TypeArguments="x:String" />
+  </this:SAP_BA1_F4_FX_02_GuardarCotizacion.in_str_MonedaA>
+  <this:SAP_BA1_F4_FX_02_GuardarCotizacion.in_str_Fecha>
+    <InArgument x:TypeArguments="x:String" />
+  </this:SAP_BA1_F4_FX_02_GuardarCotizacion.in_str_Fecha>
+  <this:SAP_BA1_F4_FX_02_GuardarCotizacion.in_str_ValorTC>
+    <InArgument x:TypeArguments="x:String" />
+  </this:SAP_BA1_F4_FX_02_GuardarCotizacion.in_str_ValorTC>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>759,3262</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SAP_BA1_F4_FX_02_GuardarCotizacion_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="22">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="28">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Modulo para guardar nueva cotizacion de tipo de cambio &#xA;&#xA;&#xA;Inputs:&#xA;in_str_Cotizacion: Seteado a valor prederterminado &#xA;in_str_MonedaDe: moneda a cargar&#xA;in_str_MonedaA: Moneda del tipo de cambio&#xA;in_str_Fecha: fecha de la carga&#xA;" DisplayName="SAP_BA1_F4_FX_02_GuardarCotizacion" sap:VirtualizedContainerService.HintSize="739,3122" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Desktop" sap:VirtualizedContainerService.HintSize="697,2883" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Boolean" Name="bool_TranTC" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:UiElementExists DisplayName="Element Exists 'Titlebar Datos de mercado'" Exists="[bool_TranTC]" sap:VirtualizedContainerService.HintSize="655,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+        <ui:UiElementExists.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="674a03fb-375a-4c50-8c69-95ff42c6dd54" InformativeScreenshot="54da87ffc838164f0098b8923a1eaa25" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Datos de mercado Tratar: Tipo de cambio de moneda' /&gt;&lt;sap id='titl' /&gt;" TimeoutMS="20000" WaitForReady="INTERACTIVE" />
+        </ui:UiElementExists.Target>
+      </ui:UiElementExists>
+      <If Condition="[bool_TranTC]" sap:VirtualizedContainerService.HintSize="655,239" sap2010:WorkflowViewState.IdRef="If_1">
+        <If.Then>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Esta en la transaccion correcta&quot;]" />
+        </If.Then>
+        <If.Else>
+          <Throw Exception="[new system.Exception(&quot;No esta en la transacción de BA1_F4_FX_02&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+        </If.Else>
+      </If>
+      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Modificar Sap_front'" sap:VirtualizedContainerService.HintSize="655,2366" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="06d2e83b4faadfd07ded270826d084e4" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Datos de mercado Tratar: Tipo de cambio de moneda' /&gt;">
+        <ui:WindowScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="621,2220" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:Boolean" Name="bool_nuevaEntrada" />
+                <Variable x:TypeArguments="x:String" Name="str_BarraStatus" />
+                <Variable x:TypeArguments="x:TimeSpan" Default="00:00:05" Name="ts_Delay5seg" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="1500" DisplayName="Click 'Button  Entradas nuevas'" sap:VirtualizedContainerService.HintSize="579,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition OffsetX="13" OffsetY="12" Position="TopLeft" />
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="71e7ad74-e63a-4325-a442-cad3738143be" InformativeScreenshot="f85bc2348987b0e20a27d1b68a5ab8bd" Selector="&lt;sap id='usr/subBDTSUBS:SAPLBUSS:0031/tabsBDT_TABSTRIP01/tabpBUSCR01_01/ssubGENSUB:SAPLBUSS:7001/subA02P01:/BA1/SAPLF4_BDT_FXRATES:0300/btnPUSH_BAS_INSERT' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:Click.Target>
+              </ui:Click>
+              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" Activate="True" DelayMS="500" DisplayName="Type Into 'CTextField  Moneda de'" EmptyField="True" sap:VirtualizedContainerService.HintSize="579,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="[in_str_MonedaDe]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="882ace01-0cad-4d0b-9f49-de9ee62d495c" InformativeScreenshot="e0813fbaae4116a3e88ade8ac76eed6d" Selector="&lt;sap colTooltip='Moneda' id='usr/subBDTSUBS:SAPLBUSS:0031/tabsBDT_TABSTRIP01/tabpBUSCR01_01/ssubGENSUB:SAPLBUSS:7001/subA02P01:/BA1/SAPLF4_BDT_FXRATES:0300/tbl/BA1/SAPLF4_BDT_FXRATESTC_FX' tableRow='0' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" Activate="True" DelayMS="500" DisplayName="Type Into 'CTextField  Moneda A'" EmptyField="True" sap:VirtualizedContainerService.HintSize="579,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="False" Text="[in_str_MonedaA]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="76f55490-ec0f-4a8c-a8a3-bb2d00c441ba" InformativeScreenshot="aadde70cf197b56f72df86f47ed5868e" Selector="&lt;sap colTooltip='Moneda' id='usr/subBDTSUBS:SAPLBUSS:0031/tabsBDT_TABSTRIP01/tabpBUSCR01_01/ssubGENSUB:SAPLBUSS:7001/subA02P01:/BA1/SAPLF4_BDT_FXRATES:0300/tbl/BA1/SAPLF4_BDT_FXRATESTC_FX' tableRow='0' tableCol='1' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" Activate="True" DelayMS="500" DisplayName="Type Into 'TextField  Fecha'" EmptyField="True" sap:VirtualizedContainerService.HintSize="579,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="False" SimulateType="False" Text="[in_str_Fecha]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="11636b0e-8aab-4ae9-9e89-68af10edee44" InformativeScreenshot="9e74363c717d2e599dd3b32f9c7a5e2b" Selector="&lt;sap colTooltip='Fecha' id='usr/subBDTSUBS:SAPLBUSS:0031/tabsBDT_TABSTRIP01/tabpBUSCR01_01/ssubGENSUB:SAPLBUSS:7001/subA02P01:/BA1/SAPLF4_BDT_FXRATES:0300/tbl/BA1/SAPLF4_BDT_FXRATESTC_FX' tableRow='0' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'ComboBox Tipo'" sap:VirtualizedContainerService.HintSize="579,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="Curso medio">
+                <ui:SelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="4">
+                    <x:String>Curso medio</x:String>
+                    <x:String xml:space="preserve"> </x:String>
+                  </scg:List>
+                </ui:SelectItem.Items>
+                <ui:SelectItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="81915b31-e2fd-4015-8d57-c5e87bcd701b" InformativeScreenshot="fbae2e73ff329e1ad9c7adfa0ff7f6bc" Selector="&lt;sap colTooltip='Tipo de conversión' id='usr/subBDTSUBS:SAPLBUSS:0031/tabsBDT_TABSTRIP01/tabpBUSCR01_01/ssubGENSUB:SAPLBUSS:7001/subA02P01:/BA1/SAPLF4_BDT_FXRATES:0300/tbl/BA1/SAPLF4_BDT_FXRATESTC_FX' tableRow='0' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:SelectItem.Target>
+              </ui:SelectItem>
+              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'ComboBox  Cotización'" sap:VirtualizedContainerService.HintSize="579,134" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="[in_str_Contizacion]">
+                <ui:SelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="4">
+                    <x:String>Cotización directa</x:String>
+                    <x:String>Cotización indirecta</x:String>
+                  </scg:List>
+                </ui:SelectItem.Items>
+                <ui:SelectItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dd85d371-76eb-418a-b44d-7d3b59260077" InformativeScreenshot="54280d96817fdfb5d4eeb012b02ada8b" Selector="&lt;sap colTooltip='Notación' id='usr/subBDTSUBS:SAPLBUSS:0031/tabsBDT_TABSTRIP01/tabpBUSCR01_01/ssubGENSUB:SAPLBUSS:7001/subA02P01:/BA1/SAPLF4_BDT_FXRATES:0300/tbl/BA1/SAPLF4_BDT_FXRATESTC_FX' tableRow='0' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:SelectItem.Target>
+              </ui:SelectItem>
+              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" Activate="True" DelayMS="1000" DisplayName="Type Into 'CTextField  Tipo de cambio'" EmptyField="True" sap:VirtualizedContainerService.HintSize="579,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" SendWindowMessages="False" SimulateType="False" Text="[in_str_ValorTC]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="96ce4b1b-03b3-4af4-85c8-cce6b8538793" InformativeScreenshot="6ea0ed483a8fdfa083fe317814ba2c8f" Selector="&lt;sap colTooltip='Cotización divisas' id='usr/subBDTSUBS:SAPLBUSS:0031/tabsBDT_TABSTRIP01/tabpBUSCR01_01/ssubGENSUB:SAPLBUSS:7001/subA02P01:/BA1/SAPLF4_BDT_FXRATES:0300/tbl/BA1/SAPLF4_BDT_FXRATESTC_FX' tableRow='0' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DelayMS="1500" DisplayName="Send Hotkey 'UserArea  usr'" sap:VirtualizedContainerService.HintSize="579,154" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
+                <ui:SendHotkey.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c530e2be-4d6e-4723-ac14-567c7a723133" InformativeScreenshot="c771722d1c85a16c0cf7301f9988610f" Selector="&lt;sap id='usr/subBDTSUBS:SAPLBUSS:0031/tabsBDT_TABSTRIP01/tabpBUSCR01_01/ssubGENSUB:SAPLBUSS:7001/subA02P01:/BA1/SAPLF4_BDT_FXRATES:0300/tbl/BA1/SAPLF4_BDT_FXRATESTC_FX' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:SendHotkey.Target>
+              </ui:SendHotkey>
+              <Delay DisplayName="Delay 5" Duration="[ts_Delay5seg]" sap:VirtualizedContainerService.HintSize="579,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SAP_ReadInformationBar workflow" sap:VirtualizedContainerService.HintSize="579,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="SAP\SAP_ReadInformationBar.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strText">[str_BarraStatus]</OutArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <If Condition="[str_BarraStatus.Contains(&quot;Se ha seleccionado una entrada&quot;) or string.IsNullOrEmpty( str_BarraStatus)]" sap:VirtualizedContainerService.HintSize="579,238" sap2010:WorkflowViewState.IdRef="If_2">
+                <If.Then>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Tomo correctamente el valor de tc, se procede a guardar y volver&quot;]" />
+                </If.Then>
+                <If.Else>
+                  <Throw Exception="[New BusinessRuleException(&quot;Error al dar enter en la nueva linea de /BA1/F4_FX_02: &quot; + str_BarraStatus)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                </If.Else>
+              </If>
+              <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2500" DisplayName="Click 'Button  Grabar (Ctrl+S)'" sap:VirtualizedContainerService.HintSize="579,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition OffsetX="9" OffsetY="14" Position="TopLeft" />
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b33792a7-8fe6-4d32-851c-e28a79939bdc" InformativeScreenshot="09f0b87651de09bb16406edf3b0d7f0e" Selector="&lt;sap id='tbar[0]/btn[11]' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:Click.Target>
+              </ui:Click>
+              <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="1000" DisplayName="Click 'Button  Atrás (F3)'" sap:VirtualizedContainerService.HintSize="579,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition OffsetX="9" OffsetY="16" Position="TopLeft" />
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e8ce43fc-0d34-45ef-b331-42a95ec2e7c3" InformativeScreenshot="916427aa047b649eb91446e208a1fcff" Selector="&lt;sap id='tbar[0]/btn[3]' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:Click.Target>
+              </ui:Click>
+            </Sequence>
+          </ActivityAction>
+        </ui:WindowScope.Body>
+      </ui:WindowScope>
+    </Sequence>
+  </Sequence>
+</Activity>
